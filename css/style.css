@@ -27,11 +27,110 @@ body {
     gap: 48px;
 }
 
+.search {
+    cursor: pointer;
+}
+
 .header__icons-right {
     display: flex;
     align-items: center;
     gap: 48px;
 }
+
+.navbar {
+    position: relative;
+    overflow: auto;
+}
+
+
+.fixed-top {
+    position: relative;
+}
+
+.navbar-toggler {
+    padding: 0;
+    background-color: #222;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-dark,
+.navbar[data-bs-theme=dark] {
+    --bs-navbar-color: none;
+    --bs-navbar-hover-color: none;
+    --bs-navbar-disabled-color: none;
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+.offcanvas.offcanvas-end {
+    top: 80px;
+    width: 232px;
+}
+
+.bg-dark {
+    background-color: #222 !important;
+}
+
+.offcanvas-body {
+    padding: 32px;
+    overflow-y: auto;
+    -webkit-box-shadow: -30px 21px 43px -23px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: -30px 21px 43px -23px rgba(0, 0, 0, 0.09);
+    box-shadow: -30px 21px 43px -23px rgba(0, 0, 0, 0.09);
+}
+
+.offcanvas {
+    position: fixed;
+    bottom: auto;
+    outline: 0;
+}
+
+.offcanvas-backdrop.show {
+    opacity: 0;
+}
+
+.text-bg-dark {
+    color: #6F6E6E !important;
+    background-color: #FFF !important;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.navbar-nav {
+    color: #6F6E6E;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav-item {
+    padding-left: 22px;
+}
+
+.nav-item:hover {
+    color: #F16D7F;
+}
+
+.navbar-nav h3 {
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.nav-list {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.nav-list h4 {
+    color: #F16D7F;
+}
+
+
 
 .top__banner {
     background-color: #F1E4E6;
@@ -84,6 +183,7 @@ body {
 
 .offers__item {
     position: relative;
+    overflow: hidden;
 }
 
 .offers__item_wild {
@@ -150,6 +250,8 @@ body {
 
 .item {
     border-color: #F8F8F8;
+    text-decoration: none;
+    display: block;
 }
 
 .item__img {
@@ -182,7 +284,7 @@ body {
     font-weight: 400;
 }
 
-.item__img:hover .item__img_hover {
+.item:hover .item__img_hover {
     opacity: 1;
 }
 
@@ -220,20 +322,25 @@ body {
     font-size: 16px;
     font-weight: 400;
 
-    padding: 15px 40px;
+    padding: 15px 0;
+    width: 211px;
     border: 1px solid #FF6A6A;
     background-color: #fff;
     display: block;
     margin: 0 auto;
     transition: all 0.3s;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
 }
+
 
 .btn:hover {
     background-color: #F26376;
     color: #fff;
 }
 
-.feature {
+.section-feature {
     background-color: #222224;
     padding-top: 104px;
     padding-bottom: 104px;
@@ -242,28 +349,28 @@ body {
     gap: 30px;
 }
 
-.feature__item {
+.section-feature__item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.feature__icon {
+.section-feature__icon {
     height: 40px;
     margin-bottom: 25px;
 }
 
-.feature__title {
+.section-feature__title {
     margin-bottom: 16px;
     color: #FBFBFB;
     font-size: 19.96px;
     font-weight: 400;
 }
 
-.feature__text {
+.section-feature__text {
     color: #FBFBFB;
-    text-align: center;
+    text-align: justify;
     font-size: 13.972px;
     font-weight: 300;
     max-width: 315px;
@@ -333,8 +440,13 @@ body {
     width: 256px;
     height: 49px;
     padding-left: 22px;
+    padding-right: 22px;
     border: 0;
     border-radius: 15px 0 0 15px;
+}
+
+.subscribe__form input:focus {
+    outline: 0.5px solid #f16d7f86;
 }
 
 .subscribe__btn {
@@ -411,6 +523,10 @@ body {
         padding-bottom: 18px;
     }
 
+    .offcanvas.offcanvas-end {
+        top: 77px;
+    }
+
     .top__title {
         font-size: 24px;
     }
@@ -446,7 +562,7 @@ body {
         padding: 25px 16px;
     }
 
-    .feature {
+    .section-feature {
         flex-direction: column;
         padding-top: 48px;
         padding-bottom: 64px;
@@ -476,6 +592,10 @@ body {
     .header {
         padding-top: 18px;
         padding-bottom: 18px;
+    }
+
+    .offcanvas.offcanvas-end {
+        top: 76px;
     }
 
     .profile {
@@ -544,7 +664,7 @@ body {
         padding: 20px 16px;
     }
 
-    .feature {
+    .section-feature {
         padding-bottom: 81px;
     }
 
